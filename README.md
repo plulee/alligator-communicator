@@ -1,2 +1,3 @@
 # alligator-communicator
-communicator using react+redux
+
+ react + redux based communicator

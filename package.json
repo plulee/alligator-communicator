@@ -1,0 +1,33 @@
+{
+  "name": "alligator-communicator",
+  "version": "1.0.0",
+  "description": "react + redux based communicator",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plulee/alligator-communicator.git"
+  },
+  "author": "plulee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plulee/alligator-communicator/issues"
+  },
+  "homepage": "https://github.com/plulee/alligator-communicator#readme",
+  "devDependencies": {
+    "node-sass": "^4.9.3",
+    "redux": "^4.0.0",
+    "sass-loader": "^7.1.0",
+    "yarn": "^1.9.2"
+  },
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.4"
+  }
+}
