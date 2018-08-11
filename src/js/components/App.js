@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 
-/* Main component communicator */
 class App extends Component {
     constructor(props) {
         super(props);
@@ -22,7 +21,7 @@ class App extends Component {
 }
 
 /* Typechecking with PropTypes */
-Communicator.propTypes = {
+App.propTypes = {
     tags: PropTypes.string,
 };
 
