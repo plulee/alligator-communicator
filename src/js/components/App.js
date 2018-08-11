@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Room } from "../containers/Room"
+import { AddMessage } from "../containers/AddMessage";
 
 class App extends Component {
     constructor(props) {
@@ -12,9 +14,11 @@ class App extends Component {
 
     render() {
         return (
-            <div className="communicator">
+            <div className="container">
                 <h1><span className="app-name">Alligator</span> Communicator</h1>
                 <button>+ Add room</button>
+                <Room />
+                <AddMessage />
             </div>
         );
     }
@@ -22,7 +26,7 @@ class App extends Component {
 
 /* Typechecking with PropTypes */
 App.propTypes = {
-    tags: PropTypes.string,
+    rooms: PropTypes.string,
 };
 
 export default App;

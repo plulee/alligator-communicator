@@ -1,13 +1,13 @@
-import { ADD_ROOM } from "../constants/action-types";
-const initialState = {
-    rooms: []
-};
-const rootReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case ADD_ROOM:
-            return { ...state, articles: [...state.rooms, action.payload] };
-        default:
-            return state;
-    }
-};
+import { combineReducers } from "redux"
+import messages from "./messages"
+import rooms from "./users"
+import users from "./users"
+
+
+const rootReducer = combineReducers({
+    messages,
+    rooms,
+    users
+});
+
 export default rootReducer;

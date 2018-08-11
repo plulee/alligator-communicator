@@ -11,20 +11,20 @@ body {
         text-decoration: none;
     }
 
-    p {
-        font-size: 1.2rem;
-    }
-
     h1 {
+        color: $text-color;
         font-size: 3rem;
     }
 
     p,
-    h1,
     input {
         color: $text-color;
+        font-size: 1.2rem;
     }
 
+    input {
+        padding: .5rem;
+    }
 
     button {
         background-color: $alligator-color;
@@ -39,21 +39,53 @@ body {
         transition: .3s ease;
 
         &:hover {
-            opacity: .8;
+            opacity: .85;
         }
     }
 }
 
 .app-name {
     color: $white-color;
+    margin-bottom: 2rem;
     text-shadow: 1px 1px 20px $alligator-color, 0 0 4px $text-color;
 }
 
-
-.communicator {
-    margin-bottom: 2rem;
+.container {
     margin-left: auto;
     margin-right: auto;
     max-width: 1200px;
     padding: 2rem;
+}
+
+.add-messages {
+    bottom: 0;
+    // background: $pale-alligator-color;
+    height: 90px;
+    left: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: fixed;
+    width: 100%;
+
+    input {
+        min-width: 500px;
+        border: 2px solid $alligator-color;
+        border-radius: 5px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: 0;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        color: $alligator-color;
+        border: 2px solid $alligator-color;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        background: $white-color;
+        box-sizing: border-box;
+    }
 }
