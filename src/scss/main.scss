@@ -1,5 +1,7 @@
 @import 'colors';
 
+$header-height: 100px;
+
 body {
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -11,9 +13,23 @@ body {
         text-decoration: none;
     }
 
-    h1 {
+    header {
+        background: lightgray;
         color: $text-color;
-        font-size: 3rem;
+        font-size: 2rem;
+        height: $header-height;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        left: 0;
+
+        & > div {
+            display: flex;
+        }
+
+        input {
+            margin-left: 2rem;
+        }
     }
 
     p,
@@ -46,8 +62,16 @@ body {
 
 .app-name {
     color: $white-color;
+    font-weight: bold;
     margin-bottom: 2rem;
-    text-shadow: 1px 1px 20px $alligator-color, 0 0 4px $text-color;
+    text-shadow: 0 0 2px $alligator-color, 0 0 4px $text-color;
+}
+.chat {
+    margin-top: 2rem;
+    height: 400px;
+    border: 1px solid lightgray;
+    overflow-y: scroll;
+    padding: 1rem;
 }
 
 .container {
@@ -87,5 +111,49 @@ body {
         border-bottom-left-radius: 0;
         background: $white-color;
         box-sizing: border-box;
+    }
+}
+.add-rooms {
+    input {
+        border: 2px solid $alligator-color;
+        border-radius: 5px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        margin-left: 1rem;
+    }
+}
+
+.message {
+    background: $pale-alligator-color;
+    margin: 0;
+    padding: .5rem;
+}
+
+.rooms-list {
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: $header-height;
+
+    .room {
+        background: $white-color;
+        border: 2px solid $alligator-color;
+        border-radius: 20px;
+        color: $alligator-color;
+        cursor: pointer;
+        font-size: 1rem;
+        margin: 1rem 1rem 0 0;
+        padding: 1rem 0.5rem;
+        min-width: 40px;
+        text-align: center;
+
+        &.room--chosen {
+            background: $pale-alligator-color;
+        }
     }
 }

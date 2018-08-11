@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Room } from "../containers/Room"
+import { Chat } from "../containers/Chat";
+import { AddRoom } from "../containers/AddRoom";
+import { RoomsList } from "../containers/RoomsList";
 import { AddMessage } from "../containers/AddMessage";
 
 class App extends Component {
@@ -15,9 +17,14 @@ class App extends Component {
     render() {
         return (
             <div className="container">
-                <h1><span className="app-name">Alligator</span> Communicator</h1>
-                <button>+ Add room</button>
-                <Room />
+                <header>
+                    <div className="container">
+                        <span className="app-name">Alligator</span> Communicator
+                        <AddRoom />
+                    </div>
+                </header>
+                <RoomsList />
+                <Chat />
                 <AddMessage />
             </div>
         );

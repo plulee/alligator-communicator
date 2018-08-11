@@ -1,14 +1,17 @@
 import * as types from '../constants/ActionTypes'
-const initialState = {
-    rooms: []
-};
-const rootReducer = (state = initialState, action) => {
+
+const rooms = (state = [], action) => {
     switch (action.type) {
         case types.ADD_ROOM:
-            return { ...state, rooms: [...state.rooms, action.payload] };
+            return state.concat([
+                {
+                    roomName: action.roomName,
+                    id: action.id,
+                }
+            ]);
         default:
             return state;
     }
 };
 
-export default rootReducer;
+export default rooms;

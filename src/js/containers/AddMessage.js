@@ -3,9 +3,11 @@ import AddMessageComponent from '../components/AddMessage'
 import { addMessage } from '../actions'
 
 const mapDispatchToProps = dispatch => ({
-    dispatch: (message, author) => {
-        dispatch(addMessage(message, author))
+    dispatch: (message, author, chatRoom) => {
+        dispatch(addMessage(message, author, chatRoom))
     }
 });
 
-export const AddMessage = connect(() => ({}), mapDispatchToProps)(AddMessageComponent);
+export const AddMessage = connect(state => ({
+    chats: state.chats
+}), mapDispatchToProps)(AddMessageComponent);

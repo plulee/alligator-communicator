@@ -2,28 +2,37 @@ import * as types from '../constants/ActionTypes'
 
 let nextMessageId = 0;
 let nextUserId = 0;
+let nextRoomId = 0;
 
-export const addRoom = room => ({
-    type: types.ADD_ROOM,
-    payload: room
+export const chooseRoom = id => ({
+    type: types.CHOOSE_ROOM,
+    id
 });
 
-export const addMessage = (message, author) => ({
+
+export const addRoom = roomName => ({
+    type: types.ADD_ROOM,
+    id: nextRoomId++,
+    roomName
+});
+
+export const addMessage = (message, author, chatRoom) => ({
   type: types.ADD_MESSAGE,
   id: nextMessageId++,
   message,
-  author
-})
+  author,
+  chatRoom
+});
 
 export const addUser = name => ({
   type: types.ADD_USER,
   id: nextUserId++,
   name
-})
+});
 
 export const messageReceived = (message, author) => ({
   type: types.MESSAGE_RECEIVED,
   id: nextMessageId++,
   message,
   author
-})
+});

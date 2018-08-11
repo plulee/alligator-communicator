@@ -6,12 +6,12 @@ const AddMessage = (props) => {
 
     const sendMessageIfNotEmpty = () => {
         if (input.value !== '') {
-            props.dispatch(input.value, "Me");
+            props.dispatch(input.value, "Me", props.chats.chosenRoomId);
             input.value = "";
         }
     };
 
-    const handleEnter = (e) => {
+    const handleEnterKey = (e) => {
         if (e.key === "Enter") {
             sendMessageIfNotEmpty();
         }
@@ -22,16 +22,16 @@ const AddMessage = (props) => {
     };
 
     return (
-        <section className="add-messages">
+        <footer className="add-messages">
             <div className="container">
                 <input
-                    onKeyPress={handleEnter}
+                    onKeyPress={handleEnterKey}
                     type="text"
                     ref={(node) => {input = node}}
                     />
                 <button onClick={handleButtonClick}>Send message</button>
             </div>
-        </section>
+        </footer>
     );
 }
 
