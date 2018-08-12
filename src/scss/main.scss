@@ -154,6 +154,11 @@ main {
     background: $pale-alligator-color;
     margin: 0;
     padding: .5rem;
+
+    &.message--other-users {
+        background: $pale-orange;
+        text-align: right;
+    }
 }
 
 .rooms-list {
