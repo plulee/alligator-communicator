@@ -21,6 +21,7 @@ const AddRoom = (props) => {
             <input
                 onKeyPress={handleEnterKey}
                 type="text"
+                placeholder="room name"
                 ref={(node) => {input = node}}
                 />
             <button onClick={handleButtonClick}>+ Add room</button>

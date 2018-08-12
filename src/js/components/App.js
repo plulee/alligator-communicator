@@ -18,14 +18,16 @@ class App extends Component {
         return (
             <div className="container">
                 <header>
-                    <div className="container">
-                        <span className="app-name">Alligator</span> Communicator
+                    <div className="header-container">
+                        <div><span className="app-name">Alligator</span> Communicator</div>
                         <AddRoom />
                     </div>
                 </header>
-                <RoomsList />
-                <Chat />
-                <AddMessage />
+                <main>
+                    <RoomsList />
+                    <Chat />
+                    <AddMessage />
+                </main>
             </div>
         );
     }

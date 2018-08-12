@@ -22,16 +22,14 @@ const AddMessage = (props) => {
     };
 
     return (
-        <footer className="add-messages">
-            <div className="container">
-                <input
-                    onKeyPress={handleEnterKey}
-                    type="text"
-                    ref={(node) => {input = node}}
-                    />
-                <button onClick={handleButtonClick}>Send message</button>
-            </div>
-        </footer>
+        <section className="add-messages">
+        <button onClick={handleButtonClick}>Send message</button>
+            <input
+                onKeyPress={handleEnterKey}
+                type="text"
+                ref={(node) => {input = node}}
+                />
+        </section>
     );
 }
 
