@@ -6,7 +6,8 @@ const users = (state = [], action) => {
             return state.concat([
                 {
                     name: action.name,
-                    id: action.id
+                    id: action.id,
+                    chatRoom: action.chatRoom,
                 }
             ]);
         default:

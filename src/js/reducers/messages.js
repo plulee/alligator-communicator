@@ -9,7 +9,8 @@ const messages = (state = [], action) => {
                     message: action.message,
                     author: action.author,
                     chatRoom: action.chatRoom,
-                    id: action.id
+                    id: action.id,
+                    incomming: action.incomming
                 }
             ]);
         default:

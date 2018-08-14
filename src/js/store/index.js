@@ -12,8 +12,9 @@ const store = createStore(
   applyMiddleware(sagaMiddleware)
 )
 
-let username = "test";
+let username = "tes3t";
 const socket = setupSocket(store.dispatch, username);
-sagaMiddleware.run(handleNewMessage, { socket, username, chatRoom: 0 });
+
+sagaMiddleware.run(handleNewMessage, { socket, username });
 
 export default store;

@@ -3,5 +3,6 @@ import ChatComponent from '../components/Chat'
 
 export const Chat = connect(state => ({
     messages: state.messages,
-    chats: state.chats
+    options: state.options,
+    users: state.users
 }), {})(ChatComponent)

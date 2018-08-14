@@ -9,5 +9,5 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 });
 
 export const ChooseRoom = connect(state => ({
-    chats: state.chats
+    options: state.options
 }), mapDispatchToProps)(ChooseRoomComponent);

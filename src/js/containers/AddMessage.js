@@ -9,5 +9,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export const AddMessage = connect(state => ({
-    chats: state.chats
+    options: state.options
 }), mapDispatchToProps)(AddMessageComponent);

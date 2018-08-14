@@ -5,9 +5,9 @@ const ChooseRoom = (props) => {
     const handleButtonClick = () => {
         props.dispatch();
     };
-    let roomClass = "room";
+    let roomClass = "room-choice";
     if (props.id === props.chosenRoomId) {
-        roomClass += " room--chosen";
+        roomClass += " room-choice--chosen";
     }
 
     return (
@@ -19,10 +19,9 @@ const ChooseRoom = (props) => {
 };
 
 ChooseRoom.propTypes = {
-    chosenRoomId: PropTypes.number.isRequired,
-    roomName: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
-    dispatch: PropTypes.func.isRequired,
+    roomName: PropTypes.string.isRequired,
+    chosenRoomId: PropTypes.number.isRequired
 }
 
 export default ChooseRoom;

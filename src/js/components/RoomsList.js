@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ChooseRoom } from "../containers/ChooseRoom";
 
-const RoomsList = ({ rooms, chats }) => (
+const RoomsList = ({ rooms, options }) => (
     <section className="rooms-list">
         {rooms.map(room => (
             <ChooseRoom
                 key={room.id}
                 {...room}
-                {...chats}
+                {...options}
             />
         ))}
     </section>
@@ -21,7 +21,7 @@ RoomsList.propTypes = {
             roomName: PropTypes.string.isRequired,
         }).isRequired
     ).isRequired,
-    chats: PropTypes.shape({
+    options: PropTypes.shape({
         chosenRoomId: PropTypes.number.isRequired,
     }).isRequired
 }

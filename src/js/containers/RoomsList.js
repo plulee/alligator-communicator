@@ -3,5 +3,5 @@ import RoomsListComponent from '../components/RoomsList'
 
 export const RoomsList = connect(state => ({
     rooms: state.rooms,
-    chats: state.chats
+    options: state.options
 }), {})(RoomsListComponent)

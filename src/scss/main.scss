@@ -9,63 +9,6 @@ body {
     margin: 0;
     padding: 0;
 
-    a {
-        color: $link-color;
-        text-decoration: none;
-    }
-
-    header {
-        @include mobile-view {
-            font-size: 1rem;
-            text-align: center;
-        }
-
-        background: $header-color;
-        color: $light-orange;
-        font-size: 2rem;
-        height: $header-height;
-        padding-bottom: .5rem;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        text-shadow: 0 0 1px $alligator-color;
-        left: 0;
-        z-index: 200;
-
-        .header-container {
-            @include mobile-view {
-                flex-direction: column;
-                padding: 1.2rem;
-            }
-
-            display: flex;
-            justify-content: space-between;
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 1200px;
-            padding: 2rem;
-        }
-
-        & > div {
-            display: flex;
-        }
-
-        input {
-            @include mobile-view {
-                margin-left: 0;
-            }
-
-            margin-left: 3rem;
-        }
-
-        .app-name {
-            color: $white-color;
-            font-weight: bold;
-            margin-bottom: 2rem;
-            text-shadow: 0 0 2px $alligator-color, 0 0 4px $text-color;
-        }
-    }
-
     p,
     input {
         @include mobile-view {
@@ -88,7 +31,7 @@ body {
         background-color: $alligator-color;
         border: 0;
         border-radius: 5px;
-        color: $white-color;
+        color: $white;
         cursor: pointer;
         font-size: 1.2rem;
         font-weight: bold;
@@ -102,15 +45,101 @@ body {
     }
 }
 
-.chat {
-    box-sizing: border-box;
-    border: 2px solid $pale-alligator-color;
-    flex: 1 1 auto;
-    height: 0px;
-    overflow-y: scroll;
-    margin-top: 2rem;
-    padding: 1rem;
+header {
+    @include mobile-view {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    background: $header-color;
+    color: $light-orange;
+    font-size: 2rem;
+    height: $header-height;
+    padding-bottom: .5rem;
+    position: fixed;
+    top: 0;
     width: 100%;
+    text-shadow: 0 0 1px $alligator-color;
+    left: 0;
+    z-index: 200;
+
+    .header-container {
+        @include mobile-view {
+            flex-direction: column;
+            padding: 1.2rem;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1200px;
+        padding: 2rem;
+    }
+
+    .app-name {
+        color: $white;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        text-shadow: 0 0 2px $alligator-color, 0 0 4px $text-color;
+    }
+
+    .add-rooms {
+        @include mobile-view {
+            margin-top: .5rem;
+        }
+
+        input {
+            @include mobile-view {
+                margin-left: 0;
+                width: 100px;
+            }
+
+            border: 2px solid $alligator-color;
+            border-radius: 5px;
+            margin-left: 3rem;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        button {
+            @include mobile-view {
+                margin-left: .5rem;
+            }
+
+            margin-left: 2rem;
+        }
+    }
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .chat {
+        box-sizing: border-box;
+        border: 2px solid $pale-alligator-color;
+        flex: 1 1 auto;
+        height: 0px;
+        overflow-y: scroll;
+        margin-top: 2rem;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .message {
+        background: $pale-alligator-color;
+        margin: 0;
+        padding: .5rem;
+
+        &.message--other-users {
+            background: $pale-orange;
+            text-align: right;
+        }
+    }
 }
 
 .container {
@@ -121,11 +150,6 @@ body {
     padding-right: 2rem;
 }
 
-main {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
 
 .add-messages {
     @include mobile-view {
@@ -135,7 +159,7 @@ main {
 
     bottom: 0;
     box-sizing: border-box;
-    height: 90px;
+    height: 120px;
     left: 0;
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -176,44 +200,6 @@ main {
     }
 }
 
-.add-rooms {
-    @include mobile-view {
-        margin-top: .5rem;
-    }
-
-    input {
-        @include mobile-view {
-            width: 100px;
-        }
-
-        border: 2px solid $alligator-color;
-        border-radius: 5px;
-
-        &:focus {
-            outline: none;
-        }
-    }
-
-    button {
-        @include mobile-view {
-            margin-left: .5rem;
-        }
-
-        margin-left: 2rem;
-    }
-}
-
-.message {
-    background: $pale-alligator-color;
-    margin: 0;
-    padding: .5rem;
-
-    &.message--other-users {
-        background: $pale-orange;
-        text-align: right;
-    }
-}
-
 .rooms-list {
 
     display: flex;
@@ -221,13 +207,13 @@ main {
     margin-top: $header-height;
     padding-top: 2rem;
 
-    .room {
+    .room-choice {
         @include mobile-view {
             font-size: .9rem;
             min-width: 100%;
         }
 
-        background: $white-color;
+        background: $white;
         border: 2px solid $alligator-color;
         border-radius: 8px;
         color: $alligator-color;
@@ -239,7 +225,7 @@ main {
         min-width: 40px;
         text-align: center;
 
-        &.room--chosen {
+        &.room-choice--chosen {
             background: $pale-alligator-color;
         }
     }

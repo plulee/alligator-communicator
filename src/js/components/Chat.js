@@ -11,28 +11,40 @@ class Chat extends React.Component {
                 message: PropTypes.string.isRequired,
                 author: PropTypes.string.isRequired
             }).isRequired
-        ).isRequired
+        ).isRequired,
+        options: PropTypes.shape({
+            chosenRoomId: PropTypes.number.isRequired,
+        }).isRequired
     };
 
     componentDidUpdate() {
-        this.container.scrollTop = this.container.scrollHeight;
+        let chatContainer = this.container;
+        chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 
     render() {
-        let messages = this.props.messages;
-        let chats = this.props.chats;
+        const messages = this.props.messages;
+        const options = this.props.options;
+        const users = this.props.users;
         return (
             <section className="chat" ref={ el => this.container = el}>
+                {users.map(user => {
+                    if (options.chosenRoomId === user.chatRoom) {
+                        return (<span
+                                    key={user.id}>{user.name}</span>);
+                    }
+                    return null;
+                })}
                 {messages.map(message => {
-                    if (chats.chosenRoomId === message.chatRoom) {
+                    if (options.chosenRoomId === message.chatRoom) {
                         return (<Message
                                     key={message.id}
                                     {...message}
                                 />);
                     }
+
                     return null;
-                }
-            )}
+                })}
             </section>
         );
     }

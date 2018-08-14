@@ -2,13 +2,17 @@ import * as types from '../constants/ActionTypes'
 
 let nextMessageId = 0;
 let nextUserId = 0;
-let nextRoomId = 0;
+let nextRoomId = 1;
 
 export const chooseRoom = id => ({
     type: types.CHOOSE_ROOM,
     id
 });
 
+export const chooseUsername = username => ({
+    type: types.CHOOSE_USERNAME,
+    username
+});
 
 export const addRoom = roomName => ({
     type: types.ADD_ROOM,
@@ -21,13 +25,8 @@ export const addMessage = (message, author, chatRoom) => ({
   id: nextMessageId++,
   message,
   author,
-  chatRoom
-});
-
-export const addUser = name => ({
-  type: types.ADD_USER,
-  id: nextUserId++,
-  name
+  chatRoom,
+  incomming: false
 });
 
 export const messageReceived = (message, author, chatRoom) => ({
@@ -35,9 +34,16 @@ export const messageReceived = (message, author, chatRoom) => ({
   id: nextMessageId++,
   message,
   author,
-  chatRoom
+  chatRoom,
+  incomming: true
 });
 
+export const addUser = (name, chatRoom) => ({
+  type: types.ADD_USER,
+  id: nextUserId++,
+  name,
+  chatRoom
+});
 
 export const populateUsersList = users => ({
   type: types.USERS_LIST,

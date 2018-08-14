@@ -1,19 +1,10 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { Chat } from "../containers/Chat";
 import { AddRoom } from "../containers/AddRoom";
 import { RoomsList } from "../containers/RoomsList";
 import { AddMessage } from "../containers/AddMessage";
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            rooms: "",
-            users: "",
-        };
-    }
-
     render() {
         return (
             <div className="container">
@@ -32,10 +23,5 @@ class App extends Component {
         );
     }
 }
-
-/* Typechecking with PropTypes */
-App.propTypes = {
-    rooms: PropTypes.string,
-};
 
 export default App;

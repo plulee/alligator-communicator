@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Message = ({ message, author }) => {
+const Message = ({ message, author, incomming }) => {
 
     let messageClass = "message";
-    if (author !== "Me") {
+    if (incomming) {
         messageClass += " message--other-users"
     }
 
