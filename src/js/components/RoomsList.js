@@ -24,6 +24,6 @@ RoomsList.propTypes = {
     options: PropTypes.shape({
         chosenRoomId: PropTypes.number.isRequired,
     }).isRequired
-}
+};
 
 export default RoomsList;

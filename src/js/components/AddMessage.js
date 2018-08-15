@@ -6,7 +6,7 @@ const AddMessage = (props) => {
     let input;
 
     const dispatchMessageIfNotEmpty = () => {
-        if (input.value !== '') {
+        if (input.value !== "") {
             props.dispatch(input.value, props.options.chosenUsername, props.options.chosenRoomId);
             input.value = "";
         }
@@ -24,22 +24,25 @@ const AddMessage = (props) => {
 
     return (
         <section className="add-messages">
-        <button onClick={handleButtonClick}>Send message</button>
-        <input
-            onKeyPress={handleEnterKey}
-            type="text"
-            ref={(node) => {input = node}}
+            <button onClick={handleButtonClick}>Send message</button>
+            <input
+                onKeyPress={handleEnterKey}
+                type="text"
+                ref={(node) => {
+                    input = node;
+                }}
             />
-        &nbsp;as&nbsp;<ChooseUsername />
+            &nbsp;as&nbsp;<ChooseUsername />
         </section>
     );
-}
+};
 
 AddMessage.propTypes = {
     dispatch: PropTypes.func.isRequired,
     options: PropTypes.shape({
         chosenRoomId: PropTypes.number.isRequired,
+        chosenUsername: PropTypes.string.isRequired
     }).isRequired
-}
+};
 
 export default AddMessage;

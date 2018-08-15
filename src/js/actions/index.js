@@ -1,4 +1,4 @@
-import * as types from '../constants/ActionTypes'
+import * as types from "../constants/ActionTypes";
 
 let nextMessageId = 0;
 let nextUserId = 0;
@@ -21,31 +21,31 @@ export const addRoom = roomName => ({
 });
 
 export const addMessage = (message, author, chatRoom) => ({
-  type: types.ADD_MESSAGE,
-  id: nextMessageId++,
-  message,
-  author,
-  chatRoom,
-  incomming: false
+    type: types.ADD_MESSAGE,
+    id: nextMessageId++,
+    message,
+    author,
+    chatRoom,
+    received: false
 });
 
 export const messageReceived = (message, author, chatRoom) => ({
-  type: types.MESSAGE_RECEIVED,
-  id: nextMessageId++,
-  message,
-  author,
-  chatRoom,
-  incomming: true
+    type: types.MESSAGE_RECEIVED,
+    id: nextMessageId++,
+    message,
+    author,
+    chatRoom,
+    received: true
 });
 
 export const addUser = (name, chatRoom) => ({
-  type: types.ADD_USER,
-  id: nextUserId++,
-  name,
-  chatRoom
+    type: types.ADD_USER,
+    id: nextUserId++,
+    name,
+    chatRoom
 });
 
 export const populateUsersList = users => ({
-  type: types.USERS_LIST,
-  users
-})
+    type: types.USERS_LIST,
+    users
+});

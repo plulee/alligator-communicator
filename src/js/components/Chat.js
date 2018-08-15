@@ -4,19 +4,6 @@ import Message from "./Message";
 
 
 class Chat extends React.Component {
-    static propTypes = {
-        messages: PropTypes.arrayOf(
-            PropTypes.shape({
-                id: PropTypes.number.isRequired,
-                message: PropTypes.string.isRequired,
-                author: PropTypes.string.isRequired
-            }).isRequired
-        ).isRequired,
-        options: PropTypes.shape({
-            chosenRoomId: PropTypes.number.isRequired,
-        }).isRequired
-    };
-
     componentDidUpdate() {
         let chatContainer = this.container;
         chatContainer.scrollTop = chatContainer.scrollHeight;
@@ -30,17 +17,17 @@ class Chat extends React.Component {
             <section className="chat" ref={ el => this.container = el}>
                 {users.map(user => {
                     if (options.chosenRoomId === user.chatRoom) {
-                        return (<span
-                                    key={user.id}>{user.name}</span>);
+                        return (<span key={user.id}>{user.name}</span>);
                     }
                     return null;
                 })}
                 {messages.map(message => {
                     if (options.chosenRoomId === message.chatRoom) {
-                        return (<Message
-                                    key={message.id}
-                                    {...message}
-                                />);
+                        return (
+                            <Message
+                                key={message.id}
+                                {...message}
+                            />);
                     }
 
                     return null;
@@ -49,5 +36,25 @@ class Chat extends React.Component {
         );
     }
 }
+
+Chat.propTypes = {
+    users: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            name: PropTypes.string.isRequired,
+            chatRoom: PropTypes.number.isRequired,
+        }).isRequired
+    ).isRequired,
+    messages: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            message: PropTypes.string.isRequired,
+            author: PropTypes.string.isRequired
+        }).isRequired
+    ).isRequired,
+    options: PropTypes.shape({
+        chosenRoomId: PropTypes.number.isRequired,
+    }).isRequired
+};
 
 export default Chat;

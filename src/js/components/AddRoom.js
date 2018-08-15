@@ -22,15 +22,17 @@ const AddRoom = (props) => {
                 onKeyPress={handleEnterKey}
                 type="text"
                 placeholder="room name"
-                ref={(node) => {input = node}}
-                />
+                ref={(node) => {
+                    input = node;
+                }}
+            />
             <button onClick={handleButtonClick}>+ Add room</button>
         </section>
     );
-}
+};
 
 AddRoom.propTypes = {
     dispatch: PropTypes.func.isRequired,
-}
+};
 
 export default AddRoom;

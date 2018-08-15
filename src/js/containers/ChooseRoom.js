@@ -1,10 +1,10 @@
-import { connect } from 'react-redux'
-import ChooseRoomComponent from '../components/ChooseRoom'
-import { chooseRoom } from '../actions'
+import { connect } from "react-redux";
+import ChooseRoomComponent from "../components/ChooseRoom";
+import { chooseRoom } from "../actions";
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch: () => {
-        dispatch(chooseRoom(ownProps.id))
+        dispatch(chooseRoom(ownProps.id));
     }
 });
 

@@ -21,7 +21,8 @@ const ChooseRoom = (props) => {
 ChooseRoom.propTypes = {
     id: PropTypes.number.isRequired,
     roomName: PropTypes.string.isRequired,
-    chosenRoomId: PropTypes.number.isRequired
-}
+    chosenRoomId: PropTypes.number.isRequired,
+    dispatch: PropTypes.func.isRequired
+};
 
 export default ChooseRoom;

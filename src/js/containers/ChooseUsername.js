@@ -1,10 +1,10 @@
-import { connect } from 'react-redux'
-import ChooseUsernameComponent from '../components/ChooseUsername'
-import { chooseUsername } from '../actions'
+import { connect } from "react-redux";
+import ChooseUsernameComponent from "../components/ChooseUsername";
+import { chooseUsername } from "../actions";
 
-const mapDispatchToProps = (dispatch, username) => ({
+const mapDispatchToProps = (dispatch) => ({
     dispatch: (username) => {
-        dispatch(chooseUsername(username))
+        dispatch(chooseUsername(username));
     }
 });
 
