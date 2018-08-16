@@ -1,7 +1,9 @@
 import { connect } from "react-redux";
 import RoomsListComponent from "../components/RoomsList";
 
-export const RoomsList = connect(state => ({
+const mapStateToProps = state => ({
     rooms: state.rooms,
     options: state.options
-}), {})(RoomsListComponent);
+});
+
+export const RoomsList = connect(mapStateToProps, () => ({}))(RoomsListComponent);

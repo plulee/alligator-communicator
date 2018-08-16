@@ -12,12 +12,12 @@ header {
     color: $light-orange;
     font-size: 2rem;
     height: $header-height;
+    left: 0;
     padding-bottom: .5rem;
     position: fixed;
+    text-shadow: 0 0 1px $alligator-color;
     top: 0;
     width: 100%;
-    text-shadow: 0 0 1px $alligator-color;
-    left: 0;
     z-index: 200;
 
     .header-container {

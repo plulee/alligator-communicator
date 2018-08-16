@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { ChooseUsername } from "../containers/ChooseUsername";
+import * as keys from "../constants/KeyNames";
 
 const AddMessage = (props) => {
     let input;
@@ -13,7 +14,7 @@ const AddMessage = (props) => {
     };
 
     const handleEnterKey = (e) => {
-        if (e.key === "Enter") {
+        if (e.key === keys.ENTER) {
             dispatchMessageIfNotEmpty();
         }
     };

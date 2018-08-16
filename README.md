@@ -10,7 +10,7 @@ React + Redux based communicator
 
 2. Start websocket server:
 
-        node src/js/server/App.js
+        node ./src/js/server/App.js
 
 3. Start local development environment:
 

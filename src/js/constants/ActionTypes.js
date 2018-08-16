@@ -1,5 +1,5 @@
+export const ADD_MESSAGE = "ADD_MESSAGE";
 export const ADD_ROOM = "ADD_ROOM";
 export const CHOOSE_ROOM = "CHOOSE_ROOM";
 export const CHOOSE_USERNAME = "CHOOSE_USERNAME";
-export const ADD_MESSAGE = "ADD_MESSAGE";
 export const MESSAGE_RECEIVED = "MESSAGE_RECEIVED";

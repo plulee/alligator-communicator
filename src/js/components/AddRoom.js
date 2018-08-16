@@ -1,19 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
+import * as keys from "../constants/KeyNames";
 
 const AddRoom = (props) => {
     let input;
 
-    const handleEnterKey = (e) => {
-        if (e.key === "Enter") {
+    const dispatchRoomNameFromInput = () => {
+        if (input.value === "") {
+            props.dispatch("no name");
+        } else {
             props.dispatch(input.value);
             input.value = "";
         }
     };
 
+    const handleEnterKey = (e) => {
+        if (e.key === keys.ENTER) {
+            dispatchRoomNameFromInput();
+        }
+    };
+
     const handleButtonClick = () => {
-        props.dispatch(input.value);
-        input.value = "";
+        dispatchRoomNameFromInput();
     };
 
     return (
