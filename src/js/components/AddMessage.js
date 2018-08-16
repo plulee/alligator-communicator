@@ -24,15 +24,17 @@ const AddMessage = (props) => {
 
     return (
         <section className="add-messages">
-            <button onClick={handleButtonClick}>Send message</button>
-            <input
+            <button onClick={handleButtonClick}>Send</button>
+            <input className="add-messages__message-text"
                 onKeyPress={handleEnterKey}
                 type="text"
+                placeholder="message"
                 ref={(node) => {
                     input = node;
                 }}
             />
-            &nbsp;as&nbsp;<ChooseUsername />
+            <span> as </span>
+            <ChooseUsername />
         </section>
     );
 };

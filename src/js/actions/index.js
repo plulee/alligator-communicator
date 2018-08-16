@@ -1,7 +1,6 @@
 import * as types from "../constants/ActionTypes";
 
 let nextMessageId = 0;
-let nextUserId = 0;
 let nextRoomId = 1;
 
 export const chooseRoom = id => ({
@@ -36,16 +35,4 @@ export const messageReceived = (message, author, chatRoom) => ({
     author,
     chatRoom,
     received: true
-});
-
-export const addUser = (name, chatRoom) => ({
-    type: types.ADD_USER,
-    id: nextUserId++,
-    name,
-    chatRoom
-});
-
-export const populateUsersList = users => ({
-    type: types.USERS_LIST,
-    users
 });

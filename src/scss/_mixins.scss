@@ -1,4 +1,4 @@
-$mobile-width: 800px;
+@import 'constants';
 
 @mixin mobile-view() {
     @media only screen and (max-width: $mobile-width)  {

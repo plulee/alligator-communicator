@@ -2,17 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const ChooseRoom = (props) => {
-    const handleButtonClick = () => {
-        props.dispatch();
-    };
     let roomClass = "room-choice";
     if (props.id === props.chosenRoomId) {
         roomClass += " room-choice--chosen";
     }
 
+    const handleButtonClick = () => {
+        props.dispatch();
+    };
+
     return (
         <button onClick={handleButtonClick} className={ roomClass }>
-            <div>chat room</div>
+            <div>room</div>
             <strong>{props.roomName}</strong>
         </button>
     );

@@ -1,0 +1,72 @@
+@import 'colors';
+@import 'mixins';
+@import 'constants';
+
+header {
+    @include mobile-view {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    background: $header-color;
+    color: $light-orange;
+    font-size: 2rem;
+    height: $header-height;
+    padding-bottom: .5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-shadow: 0 0 1px $alligator-color;
+    left: 0;
+    z-index: 200;
+
+    .header-container {
+        @include mobile-view {
+            flex-direction: column;
+            padding: 1.2rem;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1200px;
+        padding: 2rem;
+    }
+
+    .app-name {
+        color: $white;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        text-shadow: 0 0 2px $alligator-color, 0 0 4px $text-color;
+    }
+
+    .add-rooms {
+        @include mobile-view {
+            margin-top: .5rem;
+        }
+
+        input {
+            @include mobile-view {
+                margin-left: 0;
+                width: 100px;
+            }
+
+            border: 2px solid $alligator-color;
+            border-radius: 5px;
+            margin-left: 3rem;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        button {
+            @include mobile-view {
+                margin-left: .5rem;
+            }
+
+            margin-left: 2rem;
+        }
+    }
+}

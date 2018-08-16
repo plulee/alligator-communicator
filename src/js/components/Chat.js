@@ -12,15 +12,9 @@ class Chat extends React.Component {
     render() {
         const messages = this.props.messages;
         const options = this.props.options;
-        const users = this.props.users;
+
         return (
-            <section className="chat" ref={ el => this.container = el}>
-                {users.map(user => {
-                    if (options.chosenRoomId === user.chatRoom) {
-                        return (<span key={user.id}>{user.name}</span>);
-                    }
-                    return null;
-                })}
+            <section className="chat" ref={el => this.container = el}>
                 {messages.map(message => {
                     if (options.chosenRoomId === message.chatRoom) {
                         return (
@@ -38,13 +32,6 @@ class Chat extends React.Component {
 }
 
 Chat.propTypes = {
-    users: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.number.isRequired,
-            name: PropTypes.string.isRequired,
-            chatRoom: PropTypes.number.isRequired,
-        }).isRequired
-    ).isRequired,
     messages: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number.isRequired,
