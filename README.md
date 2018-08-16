@@ -1,10 +1,12 @@
 # Alligator Communicator
 
+## About
+
 React + Redux based communicator
 
 ## Installation instructions
 
-1. After cloning just run:
+1. After cloning the repository just run:
 
          yarn
 
@@ -14,6 +16,10 @@ React + Redux based communicator
 
 3. Start local development environment:
 
-        yarn start dev
+        yarn start
 
-4. Open second window and you can talk from one window to another
+4. Open second tab with the application and enjoy talking from one tab to another
+
+## Testing
+
+        yarn test
