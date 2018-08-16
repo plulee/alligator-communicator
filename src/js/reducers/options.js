@@ -17,8 +17,6 @@ const options = (state = {...initialState}, action) => {
             ...state,
             chosenUsername: action.username
         };
-
-        /*maybe Object.assign({}, state, {chosenRoomId: action.id}) */
     default:
         return state;
     }

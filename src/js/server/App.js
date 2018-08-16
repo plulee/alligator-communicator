@@ -17,15 +17,15 @@ wss.on('connection', (ws) => {
         const data = JSON.parse(message)
         switch (data.type) {
         case 'ADD_MESSAGE':
-        broadcast({
-          type: 'ADD_MESSAGE',
-          message: data.message,
-          author: data.author,
-          chatRoom: data.chatRoom
-        }, ws)
-        break;
+            broadcast({
+                type: 'ADD_MESSAGE',
+                message: data.message,
+                author: data.author,
+                chatRoom: data.chatRoom
+            }, ws)
+            break;
         default:
-        break;
+            break;
         }
     });
 });

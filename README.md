@@ -19,7 +19,3 @@ React + Redux based communicator
         yarn start
 
 4. Open second tab with the application and enjoy talking from one tab to another
-
-## Testing
-
-        yarn test
